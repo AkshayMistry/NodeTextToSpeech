@@ -1,7 +1,7 @@
 const express = require('express')
 const gtts = require('gtts.js').gTTS
 const bodyparser = require('body-parser')
-
+var PORT = process.env.PORT || 5000;
 const app = express()
 
 app.use(bodyparser.json())
@@ -23,6 +23,6 @@ app.post('/', (req, res) => {
     })
 })
 
-app.listen(5000, function () {
-    console.log("Server is listening on Port 5000")
+app.listen(PORT, function () {
+    console.log("Server is listening on Port " + PORT)
 })
